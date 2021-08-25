@@ -22,6 +22,12 @@ class StatusWindow(tk.Frame):
         self.queue_label = tk.Label(self, text=f"In Queue: {self.lol_client_window.in_queue()}")
         self.queue_label.pack(padx=20, pady=20)
 
+        self.found_game_label = tk.Label(self, text=f"Found Game: {'TODO'}")  # TODO
+        self.found_game_label.pack(padx=20, pady=20)
+
+        self.in_game_label = tk.Label(self, text=f"In Game: {'TODO'}")  # TODO
+        self.in_game_label.pack(padx=20, pady=20)
+
         update_thread = threading.Thread(target=self.update)
         update_thread.start()
 
@@ -30,6 +36,8 @@ class StatusWindow(tk.Frame):
             self.pos_label.config(text=f"Window Pos: {self.lol_client_window.get_pos()}")
             self.size_label.config(text=f"Window Size: {self.lol_client_window.get_size()}")
             self.queue_label.config(text=f"In Queue: {self.lol_client_window.in_queue()}")
+            self.found_game_label.config(text=f"Found Game: {'TODO'}")
+            self.in_game_label.config(text=f"In Game: {'TODO'}")
 
 
 if __name__ == '__main__':
