@@ -39,3 +39,6 @@ class LeagueOfLegendsClientWindow(object):
         league_of_legends_window_height = league_of_legends_window_y_end - league_of_legends_window_y
 
         return league_of_legends_window_width, league_of_legends_window_height
+
+    def in_queue(self) -> bool:
+        pass
