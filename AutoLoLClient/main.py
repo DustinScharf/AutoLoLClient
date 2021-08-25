@@ -19,7 +19,7 @@ class StatusWindow(tk.Frame):
         self.size_label = tk.Label(self, text=f"Window Size: {self.lol_client_window.get_size()}")
         self.size_label.pack(padx=20, pady=20)
 
-        self.queue_label = tk.Label(self, text=f"Window Size: {self.lol_client_window.in_queue()}")
+        self.queue_label = tk.Label(self, text=f"In Queue: {self.lol_client_window.in_queue()}")
         self.queue_label.pack(padx=20, pady=20)
 
         update_thread = threading.Thread(target=self.update)
