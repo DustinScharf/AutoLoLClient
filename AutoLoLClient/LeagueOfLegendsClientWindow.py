@@ -1,5 +1,7 @@
 from typing import Tuple
 
+import pyautogui
+
 from win32gui import FindWindow, GetWindowRect
 
 
@@ -41,4 +43,17 @@ class LeagueOfLegendsClientWindow(object):
         return league_of_legends_window_width, league_of_legends_window_height
 
     def in_queue(self) -> bool:
-        pass
+        if not self.is_open():
+            return False  # TODO exception
+
+        found_or_not_found = 0
+        for i in range(5):
+            queue_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/queue.png', confidence=0.999)
+            queue_detection_icon_found = queue_detection_icon is not None
+            if queue_detection_icon_found:
+                found_or_not_found += 1
+            else:
+                found_or_not_found -= 1
+
+        in_queue = found_or_not_found > 0
+        return in_queue
