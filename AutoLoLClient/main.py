@@ -1,3 +1,4 @@
+import threading
 import time
 
 from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
@@ -20,6 +21,15 @@ class StatusWindow(tk.Frame):
 
         self.queue_label = tk.Label(self, text=f"Window Size: {self.lol_client_window.in_queue()}")
         self.queue_label.pack(padx=20, pady=20)
+
+        update_thread = threading.Thread(target=self.update)
+        update_thread.start()
+
+    def update(self):
+        while True:
+            self.pos_label.config(text=f"Window Pos: {self.lol_client_window.get_pos()}")
+            self.size_label.config(text=f"Window Size: {self.lol_client_window.get_size()}")
+            self.queue_label.config(text=f"Window Size: {self.lol_client_window.in_queue()}")
 
 
 if __name__ == '__main__':
