@@ -1,4 +1,4 @@
-from LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
+from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
 
 if __name__ == '__main__':
     lol_client_window = LeagueOfLegendsClientWindow()
