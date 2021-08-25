@@ -1,5 +1,6 @@
 class LoLClientWindow(object):
-    window_name = "League of Legends"
+    def __init__(self, window_name: str = "League of Legends"):
+        self.window_name = window_name
 
     def get_pos(self):
         pass
