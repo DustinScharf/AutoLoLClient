@@ -29,7 +29,7 @@ class StatusWindow(tk.Frame):
         while True:
             self.pos_label.config(text=f"Window Pos: {self.lol_client_window.get_pos()}")
             self.size_label.config(text=f"Window Size: {self.lol_client_window.get_size()}")
-            self.queue_label.config(text=f"Window Size: {self.lol_client_window.in_queue()}")
+            self.queue_label.config(text=f"In Queue: {self.lol_client_window.in_queue()}")
 
 
 if __name__ == '__main__':
