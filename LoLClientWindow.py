@@ -1,0 +1,2 @@
+class LoLClientWindow(object):
+    pass
