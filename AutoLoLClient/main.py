@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     timer = QTimer()
     timer.timeout.connect(refresh)
-    timer.start(5000)
+    timer.start(3000)
 
     window.setLayout(layout)
     window.show()
