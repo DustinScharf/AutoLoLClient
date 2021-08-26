@@ -76,6 +76,14 @@ class LeagueOfLegendsClientWindow(object):
         in_queue = found_or_not_found > 0
         return in_queue
 
+    def found_game(self) -> bool:
+        if not self.is_open():
+            return False
+
+        game_found_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/found.png', confidence=0.9)
+        game_found = game_found_detection_icon is not None
+        return game_found
+
     def search_game(self) -> bool:
         if not self.is_open():
             return False
