@@ -48,6 +48,7 @@ class LeagueOfLegendsClientWindow(object):
 
         found_or_not_found = 0
         for i in range(5):
+            # TODO LANGUAGE SPECIFIC
             start_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/play.png', confidence=0.8)
             start_game_detection_icon_found = start_game_detection_icon is not None
             if start_game_detection_icon_found:
@@ -73,3 +74,12 @@ class LeagueOfLegendsClientWindow(object):
 
         in_queue = found_or_not_found > 0
         return in_queue
+
+    def search_game(self) -> bool:
+        if not self.in_menu():
+            return False
+
+        # TODO LANGUAGE SPECIFIC
+        start_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/play.png', confidence=0.8)
+        pyautogui.click(start_game_detection_icon.x, start_game_detection_icon.y)
+        return True
