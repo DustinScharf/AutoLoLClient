@@ -42,6 +42,22 @@ class LeagueOfLegendsClientWindow(object):
 
         return league_of_legends_window_width, league_of_legends_window_height
 
+    def in_menu(self) -> bool:
+        if not self.is_open():
+            return False  # TODO exception
+
+        found_or_not_found = 0
+        for i in range(5):
+            start_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/play.png', confidence=0.8)
+            start_game_detection_icon_found = start_game_detection_icon is not None
+            if start_game_detection_icon_found:
+                found_or_not_found += 1
+            else:
+                found_or_not_found -= 1
+
+        in_menu = found_or_not_found > 0
+        return in_menu
+
     def in_queue(self) -> bool:
         if not self.is_open():
             return False  # TODO exception
