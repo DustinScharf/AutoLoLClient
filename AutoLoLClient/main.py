@@ -5,6 +5,4 @@ from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindo
 
 if __name__ == '__main__':
     lol_client = LeagueOfLegendsClientWindow()
-    while True:
-        print(lol_client.in_menu())
-        time.sleep(1)
+    print(lol_client.search_game())
