@@ -66,7 +66,7 @@ class LeagueOfLegendsClientWindow(object):
 
         found_or_not_found = 0
         for i in range(5):
-            queue_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/queue.png', confidence=0.999)
+            queue_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/queue.png', confidence=0.99)
             queue_detection_icon_found = queue_detection_icon is not None
             if queue_detection_icon_found:
                 found_or_not_found += 1
