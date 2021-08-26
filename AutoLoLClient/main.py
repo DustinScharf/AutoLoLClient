@@ -10,6 +10,7 @@ from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindo
 def refresh():
     in_menu_label.setText(f"In Menu: {lol_client.in_menu()}")
     in_queue_label.setText(f"In Queue: {lol_client.in_queue()}")
+    game_found_label.setText(f"Game Found: {lol_client.found_game()}")
 
 
 def search_game():
@@ -31,6 +32,9 @@ if __name__ == '__main__':
 
     in_queue_label = QLabel(f"In Queue: {lol_client.in_queue()}")
     layout.addWidget(in_queue_label)
+
+    game_found_label = QLabel(f"Game Found: {lol_client.found_game()}")
+    layout.addWidget(game_found_label)
 
     top_button = QPushButton("Search Blind Pick Game")
     layout.addWidget(top_button)
