@@ -1,3 +1,4 @@
+import time
 from typing import Tuple
 
 import pyautogui
@@ -76,10 +77,41 @@ class LeagueOfLegendsClientWindow(object):
         return in_queue
 
     def search_game(self) -> bool:
-        if not self.in_menu():
+        if not self.is_open():
             return False
 
         # TODO LANGUAGE SPECIFIC
         start_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/play.png', confidence=0.8)
-        pyautogui.click(start_game_detection_icon.x, start_game_detection_icon.y)
-        return True
+        start_game_detection_icon_found = start_game_detection_icon is not None
+        if start_game_detection_icon_found:
+            pyautogui.click(start_game_detection_icon.x, start_game_detection_icon.y)
+            time.sleep(1)
+
+        summoners_rift_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/5v5sumRift.png', confidence=0.999)
+        summoners_rift_detection_icon_found = summoners_rift_detection_icon is not None
+        if summoners_rift_detection_icon_found:
+            pyautogui.click(summoners_rift_detection_icon.x, summoners_rift_detection_icon.y)
+            time.sleep(1)
+
+        blind_pick_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/blind_pick.png', confidence=0.999)
+        blind_pick_detection_icon_found = blind_pick_detection_icon is not None
+        if blind_pick_detection_icon_found:
+            pyautogui.click(blind_pick_detection_icon.x, blind_pick_detection_icon.y)
+            time.sleep(1)
+
+        confirm_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/confirm.png', confidence=0.999)
+        confirm_detection_icon_found = confirm_detection_icon is not None
+        if confirm_detection_icon_found:
+            pyautogui.click(confirm_detection_icon.x, confirm_detection_icon.y)
+            time.sleep(2)
+
+        find_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/find.png', confidence=0.8)
+        find_detection_icon_found = find_detection_icon is not None
+        if not find_detection_icon_found:
+            return False
+
+        pyautogui.click(find_detection_icon.x, find_detection_icon.y)
+        time.sleep(2)
+
+        success = self.in_queue()
+        return success
