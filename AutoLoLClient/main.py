@@ -24,6 +24,7 @@ if __name__ == '__main__':
     app.setStyle('Windows')
 
     window = QWidget()
+    window.setWindowTitle("AutoLoLClient")
     window.setMinimumWidth(400)
     window.setMinimumWidth(300)
 
