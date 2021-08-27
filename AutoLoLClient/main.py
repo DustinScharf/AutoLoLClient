@@ -8,9 +8,29 @@ from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindo
 
 
 def refresh():
-    in_menu_label.setText(f"In Menu: {lol_client.in_menu()}")
-    in_queue_label.setText(f"In Queue: {lol_client.in_queue()}")
-    game_found_label.setText(f"Game Found: {lol_client.found_game()}")
+    in_menu = lol_client.in_menu()
+    in_menu_label.setText(f"In Menu: {in_menu}")
+    if in_menu:
+        in_menu_label.setStyleSheet("background-color: green")
+    else:
+        in_menu_label.setStyleSheet("background-color: red")
+
+    in_queue = lol_client.in_queue()
+    in_queue_label.setText(f"In Queue: {in_queue}")
+    if in_queue:
+        in_queue_label.setStyleSheet("background-color: green")
+    else:
+        in_queue_label.setStyleSheet("background-color: red")
+
+    game_found = lol_client.found_game()
+    game_found_label.setText(f"Game Found: {game_found}")
+    if game_found:
+        game_found_label.setStyleSheet("background-color: green")
+    else:
+        game_found_label.setStyleSheet("background-color: red")
+
+
+
 
 
 def search_game():
