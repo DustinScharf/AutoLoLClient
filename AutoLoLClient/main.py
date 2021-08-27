@@ -67,7 +67,7 @@ if __name__ == '__main__':
     layout.addWidget(top_button)
     top_button.clicked.connect(search_game)
 
-    status_label = QLabel(f"Status: {'TODO'}")  # TODO TEST
+    status_label = QLabel(f"Status: {'Waiting for action...'}")  # TODO TEST
     layout.addWidget(status_label)
     status_label.setStyleSheet("background-color: yellow")
 
