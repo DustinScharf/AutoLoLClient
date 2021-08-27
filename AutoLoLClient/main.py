@@ -29,8 +29,12 @@ def refresh():
     else:
         game_found_label.setStyleSheet("background-color: red")
 
-
-
+    if lol_client.in_menu():
+        status_label.setText(f"Status: {'in_menu'}")
+    elif lol_client.in_queue():
+        status_label.setText(f"Status: {'in_queue'}")
+    elif lol_client.found_game():
+        status_label.setText(f"Status: {'found_game'}")
 
 
 def search_game():
@@ -63,7 +67,7 @@ if __name__ == '__main__':
     layout.addWidget(top_button)
     top_button.clicked.connect(search_game)
 
-    status_label = QLabel(f"Status: {'TODO'}")  # PLACEHOLDER TODO
+    status_label = QLabel(f"Status: {'TODO'}")  # TODO TEST
     layout.addWidget(status_label)
     status_label.setStyleSheet("background-color: yellow")
 
