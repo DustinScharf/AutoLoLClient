@@ -1,8 +1,10 @@
 import threading
 import time
 
+import pyautogui
 from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout, QPushButton, QMessageBox
+from win32api import SetCursorPos
 
 from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
 
@@ -37,12 +39,18 @@ def refresh():
         status_label.setText(f"Status: {'found_game'}")
 
 
+def send_message():
+    lol_client.send_message('123')
+
+
 def search_game():
     lol_client.search_game()
 
 
 if __name__ == '__main__':
     lol_client = LeagueOfLegendsClientWindow()
+
+    # SetCursorPos((2500, 500))
 
     app = QApplication([])
     app.setStyle('Windows')
@@ -66,6 +74,10 @@ if __name__ == '__main__':
     top_button = QPushButton("Search Blind Pick Game")
     layout.addWidget(top_button)
     top_button.clicked.connect(search_game)
+
+    bot_button = QPushButton("send_message")
+    layout.addWidget(bot_button)
+    bot_button.clicked.connect(send_message)
 
     status_label = QLabel(f"Status: {'Waiting for action...'}")  # TODO TEST
     layout.addWidget(status_label)
