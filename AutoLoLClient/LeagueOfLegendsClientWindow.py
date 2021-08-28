@@ -2,8 +2,10 @@ import time
 from typing import Tuple
 
 import pyautogui
+from win32api import MAKELONG, SetCursorPos, mouse_event
+from win32con import WM_LBUTTONDOWN, MK_LBUTTON, MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
 
-from win32gui import FindWindow, GetWindowRect
+from win32gui import FindWindow, GetWindowRect, PostMessage
 
 
 class LeagueOfLegendsClientWindow(object):
@@ -123,3 +125,15 @@ class LeagueOfLegendsClientWindow(object):
 
         success = self.in_queue()
         return success
+
+    def send_message(self, message: str) -> bool:
+        window_pos = self.get_pos()
+        window_size = self.get_size()
+        x = window_pos[0] + 100
+        y = window_pos[1] + window_size[1] - 30
+        SetCursorPos((x, y))
+        mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
+        mouse_event(MOUSEEVENTF_LEFTUP, x, y, 0, 0)
+        pyautogui.write(message)
+        pyautogui.press("enter")
+        return True
