@@ -23,7 +23,7 @@ class LeagueOfLegendsClientWindow(object):
 
         league_of_legends_window_rect = GetWindowRect(self.league_of_legends_window)
         league_of_legends_window_x = league_of_legends_window_rect[0]
-        league_of_legends_window_y = league_of_legends_window_rect[2]
+        league_of_legends_window_y = league_of_legends_window_rect[1]
         return league_of_legends_window_x, league_of_legends_window_y
 
     def get_size(self) -> Tuple[int, int]:
