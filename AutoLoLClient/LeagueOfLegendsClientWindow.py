@@ -126,7 +126,16 @@ class LeagueOfLegendsClientWindow(object):
         success = self.in_queue()
         return success
 
-    def send_message(self, message: str) -> bool:
+    def accept_game(self) -> bool:
+        if not self.is_open():
+            return False
+
+        # TODO LANGUAGE SPECIFIC
+        accept_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/accept.png', confidence=0.9)
+        pyautogui.click(accept_game_detection_icon.x, accept_game_detection_icon.y)
+        return True
+
+    def send_message(self, message: str):
         window_pos = self.get_pos()
         window_size = self.get_size()
         x = window_pos[0] + 100
@@ -136,7 +145,6 @@ class LeagueOfLegendsClientWindow(object):
         mouse_event(MOUSEEVENTF_LEFTUP, x, y, 0, 0)
         pyautogui.write(message)
         pyautogui.press("enter")
-        return True
 
     def get_state(self) -> str:
         if self.found_game():
