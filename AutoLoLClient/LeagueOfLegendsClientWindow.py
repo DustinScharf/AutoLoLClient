@@ -137,3 +137,13 @@ class LeagueOfLegendsClientWindow(object):
         pyautogui.write(message)
         pyautogui.press("enter")
         return True
+
+    def get_state(self) -> str:
+        if self.found_game():
+            return "found_game"
+        elif self.in_queue():
+            return "in_queue"
+        elif self.in_menu():
+            return "in_menu"
+        else:
+            return "in any game menu"  # TODO make more clear
