@@ -36,6 +36,7 @@ def search_game():
                 time.sleep(0.03)
 
             # TODO check if in-game
+            lol_client.search_champion(champion_pick_box.text())
 
 
 if __name__ == '__main__':
