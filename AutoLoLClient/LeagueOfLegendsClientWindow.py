@@ -188,9 +188,6 @@ class LeagueOfLegendsClientWindow(object):
         return True
 
     def pick_first_champion(self) -> bool:
-        if not self.in_champion_selection():
-            return False
-
         window_pos = self.get_pos()
         x = window_pos[0] + 300
         y = window_pos[1] + 125
