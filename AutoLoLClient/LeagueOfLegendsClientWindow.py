@@ -191,7 +191,15 @@ class LeagueOfLegendsClientWindow(object):
         if not self.in_champion_selection():
             return False
 
-        # TODO click champion automatically
+        window_pos = self.get_pos()
+        x = window_pos[0] + 300
+        y = window_pos[1] + 125
+        SetCursorPos((x, y))
+        mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
+        mouse_event(MOUSEEVENTF_LEFTUP, x, y, 0, 0)
+
+        lock_in_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/lock_champion.png', confidence=0.9)
+        pyautogui.click(lock_in_detection_icon.x, lock_in_detection_icon.y)
         # TODO return if really picked
 
     def get_state(self) -> str:
