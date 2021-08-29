@@ -38,6 +38,8 @@ def search_game():
 
             if lol_client.in_champion_selection():
                 lol_client.search_champion(champion_pick_box.text())
+                time.sleep(1)
+                lol_client.pick_first_champion()
             else:
                 accepted = False
 
