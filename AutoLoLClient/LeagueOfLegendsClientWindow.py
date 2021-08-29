@@ -178,8 +178,21 @@ class LeagueOfLegendsClientWindow(object):
         search_detection_icon_found = search_detection_icon is not None
         return search_detection_icon_found
 
-    def pick_champion(self):  # TODO check if really picked
-        pass
+    def search_champion(self, champion_name: str) -> bool:
+        if not self.in_champion_selection():
+            return False
+
+        search_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/search_champion.png', confidence=0.9)
+        pyautogui.click(search_detection_icon.x, search_detection_icon.y)
+        pyautogui.write(champion_name, interval=0.05)
+        return True
+
+    def pick_first_champion(self):  # TODO check if really picked
+        if not self.in_champion_selection():
+            return False
+
+        # TODO click to champion automatically
+        # TODO return if really picked
 
     def get_state(self) -> str:
         if self.found_game():
