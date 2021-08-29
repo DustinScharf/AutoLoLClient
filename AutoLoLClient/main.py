@@ -9,17 +9,18 @@ def search_game():
     lol_client = LeagueOfLegendsClientWindow()
 
     if not lol_client.in_menu():
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Critical)
+        if not lol_client.go_to_menu():
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
 
-        msg.setWindowTitle("AutoLoLClient")
-        msg.setText("Please go to the main menu")
+            msg.setWindowTitle("AutoLoLClient")
+            msg.setText("Please go to the main menu")
 
-        msg.setStandardButtons(QMessageBox.Ok)
+            msg.setStandardButtons(QMessageBox.Ok)
 
-        msg.exec()
+            msg.exec()
 
-        return
+            return
 
     lol_client.search_game()
     text_to_send = chat_message_box.text()
