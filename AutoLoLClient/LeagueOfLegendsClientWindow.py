@@ -191,7 +191,7 @@ class LeagueOfLegendsClientWindow(object):
         if not self.in_champion_selection():
             return False
 
-        # TODO click to champion automatically
+        # TODO click champion automatically
         # TODO return if really picked
 
     def get_state(self) -> str:
