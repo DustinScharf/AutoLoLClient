@@ -178,6 +178,9 @@ class LeagueOfLegendsClientWindow(object):
         search_detection_icon_found = search_detection_icon is not None
         return search_detection_icon_found
 
+    def pick_champion(self):  # TODO check if really picked
+        pass
+
     def get_state(self) -> str:
         if self.found_game():
             return "found_game"
