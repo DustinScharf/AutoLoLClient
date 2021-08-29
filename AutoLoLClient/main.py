@@ -12,7 +12,11 @@ def search_game():
             msg.setIcon(QMessageBox.Critical)
 
             msg.setWindowTitle("AutoLoLClient")
-            msg.setText("Please go to the main menu")
+            msg.setText("Error occurred, press show details to show possible solutions")
+            msg.setDetailedText("Put the lol client window into the foreground\n"
+                                "Put the lol client window to you main monitor\n"
+                                "Set the lol client language to english\n"
+                                "Set the lol client window size to 1024x576")
 
             msg.setStandardButtons(QMessageBox.Ok)
 
@@ -25,7 +29,6 @@ def search_game():
     accepted = False
     while not accepted:
         state = lol_client.get_state()
-        # TODO check if still searching
         if state == "found_game":
 
             lol_client.accept_game()
@@ -40,6 +43,19 @@ def search_game():
                 lol_client.pick_first_champion()
             else:
                 accepted = False
+
+        if state != "in_queue":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+
+            msg.setWindowTitle("AutoLoLClient")
+            msg.setText("Not in queue anymore, please press a start button again")
+
+            msg.setStandardButtons(QMessageBox.Ok)
+
+            msg.exec()
+
+            return
 
 
 def wait_for_game():
@@ -47,7 +63,6 @@ def wait_for_game():
     accepted = False
     while not accepted:
         state = lol_client.get_state()
-        # TODO check if still searching
         if state == "found_game":
 
             lol_client.accept_game()
@@ -62,6 +77,19 @@ def wait_for_game():
                 lol_client.pick_first_champion()
             else:
                 accepted = False
+
+        if state != "in_queue":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+
+            msg.setWindowTitle("AutoLoLClient")
+            msg.setText("Not in queue anymore, please press a start button again")
+
+            msg.setStandardButtons(QMessageBox.Ok)
+
+            msg.exec()
+
+            return
 
 
 if __name__ == '__main__':
