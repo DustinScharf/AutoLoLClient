@@ -86,6 +86,29 @@ class LeagueOfLegendsClientWindow(object):
         game_found = game_found_detection_icon is not None
         return game_found
 
+    def go_to_menu(self) -> bool:
+        if not self.is_open():
+            return False
+
+        if self.in_menu():
+            return True
+
+        menu_detection_icon_0 = pyautogui.locateCenterOnScreen('AutoLoLClient/home_button.png', confidence=0.8)
+        menu_detection_icon_0_found = menu_detection_icon_0 is not None
+        if menu_detection_icon_0_found:
+            pyautogui.click(menu_detection_icon_0.x, menu_detection_icon_0.y)
+            time.sleep(2)
+            return True
+
+        menu_detection_icon_1 = pyautogui.locateCenterOnScreen('AutoLoLClient/menu_after_game.png', confidence=0.999)
+        menu_detection_icon_1_found = menu_detection_icon_1 is not None
+        if menu_detection_icon_1_found:
+            pyautogui.click(menu_detection_icon_1.x, menu_detection_icon_1.y)
+            time.sleep(2)
+            return True
+
+        return False
+
     def search_game(self) -> bool:
         if not self.is_open():
             return False
