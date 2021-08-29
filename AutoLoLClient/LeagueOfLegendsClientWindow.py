@@ -123,7 +123,7 @@ class LeagueOfLegendsClientWindow(object):
         pyautogui.click(find_detection_icon.x, find_detection_icon.y)
         time.sleep(2)
 
-        success = self.in_queue()
+        success = self.in_queue() or self.found_game()
         return success
 
     def accept_game(self) -> bool:
