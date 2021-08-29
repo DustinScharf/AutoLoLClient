@@ -1,6 +1,6 @@
 import time
 
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QLabel
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QLabel, QHBoxLayout
 
 from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
 
@@ -61,9 +61,17 @@ if __name__ == '__main__':
     champion_pick_box = QLineEdit()
     layout.addWidget(champion_pick_box)
 
+    inner_layout = QHBoxLayout()
+
     search_game_button = QPushButton("Search Blind Pick Game")
-    layout.addWidget(search_game_button)
+    inner_layout.addWidget(search_game_button)
     search_game_button.clicked.connect(search_game)
+
+    wait_for_game_button = QPushButton("Only wait for accept")
+    inner_layout.addWidget(wait_for_game_button)
+    search_game_button.clicked.connect(wait_for_game)
+
+    layout.addWidget(inner_layout)
 
     window.setLayout(layout)
     window.show()
