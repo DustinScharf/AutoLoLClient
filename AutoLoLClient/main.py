@@ -27,6 +27,7 @@ def search_game():
     accepted = False
     while not accepted:
         state = lol_client.get_state()
+        # TODO check if still searching
         if state == "found_game":
 
             lol_client.accept_game()
