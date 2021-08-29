@@ -6,8 +6,6 @@ from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindo
 
 
 def search_game():
-    lol_client = LeagueOfLegendsClientWindow()
-
     if not lol_client.in_menu():
         if not lol_client.go_to_menu():
             msg = QMessageBox()
@@ -44,7 +42,31 @@ def search_game():
                 accepted = False
 
 
+def wait_for_game():
+    text_to_send = chat_message_box.text()
+    accepted = False
+    while not accepted:
+        state = lol_client.get_state()
+        # TODO check if still searching
+        if state == "found_game":
+
+            lol_client.accept_game()
+            accepted = True
+            for i in range(30):
+                lol_client.send_message(text_to_send)
+                time.sleep(0.03)
+
+            if lol_client.in_champion_selection():
+                lol_client.search_champion(champion_pick_box.text())
+                time.sleep(1)
+                lol_client.pick_first_champion()
+            else:
+                accepted = False
+
+
 if __name__ == '__main__':
+    lol_client = LeagueOfLegendsClientWindow()
+
     app = QApplication([])
     window = QWidget()
     window.setWindowTitle("AutoLoLClient")
