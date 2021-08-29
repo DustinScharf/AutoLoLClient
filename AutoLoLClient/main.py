@@ -35,8 +35,10 @@ def search_game():
                 lol_client.send_message(text_to_send)
                 time.sleep(0.03)
 
-            # TODO check if in-game
-            lol_client.search_champion(champion_pick_box.text())
+            if lol_client.in_champion_selection():
+                lol_client.search_champion(champion_pick_box.text())
+            else:
+                accepted = False
 
 
 if __name__ == '__main__':
