@@ -93,7 +93,7 @@ if __name__ == '__main__':
     inner_layout.addWidget(wait_for_game_button)
     search_game_button.clicked.connect(wait_for_game)
 
-    layout.addWidget(inner_layout)
+    layout.addLayout(inner_layout)
 
     window.setLayout(layout)
     window.show()
