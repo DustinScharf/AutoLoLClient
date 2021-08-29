@@ -35,6 +35,8 @@ def search_game():
                 lol_client.send_message(text_to_send)
                 time.sleep(0.03)
 
+            # TODO check if in-game
+
 
 if __name__ == '__main__':
     app = QApplication([])
@@ -46,9 +48,12 @@ if __name__ == '__main__':
     layout = QVBoxLayout()
 
     layout.addWidget(QLabel("Enter message to write instantly"))
-
     chat_message_box = QLineEdit()
     layout.addWidget(chat_message_box)
+
+    layout.addWidget(QLabel("Enter champion to pick"))
+    champion_pick_box = QLineEdit()
+    layout.addWidget(champion_pick_box)
 
     search_game_button = QPushButton("Search Blind Pick Game")
     layout.addWidget(search_game_button)
