@@ -187,7 +187,7 @@ class LeagueOfLegendsClientWindow(object):
         pyautogui.write(champion_name, interval=0.05)
         return True
 
-    def pick_first_champion(self):  # TODO check if really picked
+    def pick_first_champion(self) -> bool:
         if not self.in_champion_selection():
             return False
 
@@ -199,8 +199,12 @@ class LeagueOfLegendsClientWindow(object):
         mouse_event(MOUSEEVENTF_LEFTUP, x, y, 0, 0)
 
         lock_in_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/lock_champion.png', confidence=0.9)
+        lock_in_detection_icon_found = lock_in_detection_icon is not None
+        if not lock_in_detection_icon_found:
+            return False
+
         pyautogui.click(lock_in_detection_icon.x, lock_in_detection_icon.y)
-        # TODO return if really picked
+        return True
 
     def get_state(self) -> str:
         if self.found_game():
