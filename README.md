@@ -3,7 +3,7 @@ A tool to automate things in the LoL Client
 
 ### Installation
 Download the repository and run ``AutoLoLClient/main.py``  
-(Dependencies are not included, see [needed Dependencies](#needed-dependencies) , a full build will follow)
+(Dependencies are not included, see [needed Dependencies](#needed-dependencies), a full build will follow)
 
 ### GUI and functions
 ![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The GUI")
