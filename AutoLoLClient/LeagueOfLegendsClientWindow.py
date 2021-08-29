@@ -169,6 +169,15 @@ class LeagueOfLegendsClientWindow(object):
         pyautogui.write(message)
         pyautogui.press("enter")
 
+    def in_champion_selection(self) -> bool:
+        if not self.is_open():
+            return False
+
+        # TODO LANGUAGE SPECIFIC
+        search_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/search_champion.png', confidence=0.9)
+        search_detection_icon_found = search_detection_icon is not None
+        return search_detection_icon_found
+
     def get_state(self) -> str:
         if self.found_game():
             return "found_game"
