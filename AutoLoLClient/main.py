@@ -52,7 +52,8 @@ if __name__ == '__main__':
     chat_message_box = QLineEdit()
     layout.addWidget(chat_message_box)
 
-    layout.addWidget(QLabel("Enter champion to pick"))
+    layout.addWidget(QLabel("Enter champion to pick (full name)"))
+    layout.addWidget(QLabel("[YET ONLY CHAMPION SEARCH, BUT NOT PICK IMPLEMENTED]"))
     champion_pick_box = QLineEdit()
     layout.addWidget(champion_pick_box)
 
