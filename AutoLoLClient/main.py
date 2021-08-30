@@ -2,7 +2,7 @@ import time
 
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QLabel, QHBoxLayout
 
-from AutoLoLClient.LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
+from LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
 
 
 def search_game():
