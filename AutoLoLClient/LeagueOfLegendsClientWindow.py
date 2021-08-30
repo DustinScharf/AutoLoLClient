@@ -5,7 +5,7 @@ import pyautogui
 from win32api import MAKELONG, SetCursorPos, mouse_event, GetMonitorInfo, EnumDisplayMonitors
 from win32con import WM_LBUTTONDOWN, MK_LBUTTON, MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
 
-from win32gui import FindWindow, GetWindowRect, PostMessage, SetForegroundWindow, MoveWindow
+from win32gui import FindWindow, GetWindowRect, PostMessage, SetForegroundWindow, MoveWindow, ShowWindow
 
 
 class LeagueOfLegendsClientWindow(object):
@@ -239,5 +239,6 @@ class LeagueOfLegendsClientWindow(object):
         main_monitor_x = main_monitor[2][0]
         main_monitor_y = main_monitor[2][1]
 
+        ShowWindow(self.league_of_legends_window, 9)
         SetForegroundWindow(self.league_of_legends_window)
         MoveWindow(self.league_of_legends_window, main_monitor_x, main_monitor_y, 1024, 576, True)
