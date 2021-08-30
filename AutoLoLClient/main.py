@@ -4,6 +4,8 @@ import pyautogui
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QLabel, QHBoxLayout
 
 from LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
+from win32api import GetMonitorInfo, EnumDisplayMonitors
+from win32gui import MoveWindow
 
 
 def search_game():
@@ -18,10 +20,9 @@ def search_game():
 
             msg.setWindowTitle("AutoLoLClient")
             msg.setText("Error occurred, press show details to show possible solutions")
-            msg.setDetailedText("Put the lol client window into the foreground\n"
-                                "Put the lol client window to you main monitor\n"
-                                "Set the lol client language to english\n"
-                                "Set the lol client window size to 1024x576")
+            msg.setDetailedText("Set the lol client language to english\n"
+                                "Set the lol client window size to 1024x576\n"
+                                "Make sure the client window is in foreground of your main monitor")
 
             msg.setStandardButtons(QMessageBox.Ok)
 
@@ -63,6 +64,8 @@ def search_game():
 
 
 def wait_for_game():
+    lol_client.force_foreground()
+
     user_input = pyautogui.confirm(text='Start waiting for game?', title='AutoLoLClient', buttons=["OK", "Cancel"])
     if user_input == "Cancel":
         return
