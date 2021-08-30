@@ -52,7 +52,7 @@ class LeagueOfLegendsClientWindow(object):
         found_or_not_found = 0
         for i in range(5):
             # TODO LANGUAGE SPECIFIC
-            start_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/play.png', confidence=0.8)
+            start_game_detection_icon = pyautogui.locateCenterOnScreen('play.png', confidence=0.8)
             start_game_detection_icon_found = start_game_detection_icon is not None
             if start_game_detection_icon_found:
                 found_or_not_found += 1
@@ -68,7 +68,7 @@ class LeagueOfLegendsClientWindow(object):
 
         found_or_not_found = 0
         for i in range(5):
-            queue_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/queue.png', confidence=0.99)
+            queue_detection_icon = pyautogui.locateCenterOnScreen('queue.png', confidence=0.99)
             queue_detection_icon_found = queue_detection_icon is not None
             if queue_detection_icon_found:
                 found_or_not_found += 1
@@ -82,7 +82,7 @@ class LeagueOfLegendsClientWindow(object):
         if not self.is_open():
             return False
 
-        game_found_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/found.png', confidence=0.9)
+        game_found_detection_icon = pyautogui.locateCenterOnScreen('found.png', confidence=0.9)
         game_found = game_found_detection_icon is not None
         return game_found
 
@@ -93,17 +93,30 @@ class LeagueOfLegendsClientWindow(object):
         if self.in_menu():
             return True
 
-        menu_detection_icon_0 = pyautogui.locateCenterOnScreen('AutoLoLClient/home_button.png', confidence=0.8)
+        menu_detection_icon_0 = pyautogui.locateCenterOnScreen('home_button.png', confidence=0.8)
         menu_detection_icon_0_found = menu_detection_icon_0 is not None
         if menu_detection_icon_0_found:
             pyautogui.click(menu_detection_icon_0.x, menu_detection_icon_0.y)
             time.sleep(2)
             return True
 
-        menu_detection_icon_1 = pyautogui.locateCenterOnScreen('AutoLoLClient/menu_after_game.png', confidence=0.999)
+        menu_detection_icon_1 = pyautogui.locateCenterOnScreen('menu_after_game.png', confidence=0.999)
         menu_detection_icon_1_found = menu_detection_icon_1 is not None
         if menu_detection_icon_1_found:
             pyautogui.click(menu_detection_icon_1.x, menu_detection_icon_1.y)
+            time.sleep(2)
+
+        leave_party_detection_icon_1 = pyautogui.locateCenterOnScreen('leave_party.png', confidence=0.9)
+        leave_party_detection_icon_1_found = leave_party_detection_icon_1 is not None
+        if leave_party_detection_icon_1_found:
+            pyautogui.click(leave_party_detection_icon_1.x, leave_party_detection_icon_1.y)
+            time.sleep(2)
+            return True
+
+        leave_party_detection_icon_2 = pyautogui.locateCenterOnScreen('leave_party_2.png', confidence=0.9)
+        leave_party_detection_icon_2_found = leave_party_detection_icon_2 is not None
+        if leave_party_detection_icon_2_found:
+            pyautogui.click(leave_party_detection_icon_2.x, leave_party_detection_icon_2.y)
             time.sleep(2)
             return True
 
@@ -114,31 +127,31 @@ class LeagueOfLegendsClientWindow(object):
             return False
 
         # TODO LANGUAGE SPECIFIC
-        start_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/play.png', confidence=0.8)
+        start_game_detection_icon = pyautogui.locateCenterOnScreen('play.png', confidence=0.8)
         start_game_detection_icon_found = start_game_detection_icon is not None
         if start_game_detection_icon_found:
             pyautogui.click(start_game_detection_icon.x, start_game_detection_icon.y)
             time.sleep(1)
 
-        summoners_rift_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/5v5sumRift.png', confidence=0.999)
+        summoners_rift_detection_icon = pyautogui.locateCenterOnScreen('5v5sumRift.png', confidence=0.999)
         summoners_rift_detection_icon_found = summoners_rift_detection_icon is not None
         if summoners_rift_detection_icon_found:
             pyautogui.click(summoners_rift_detection_icon.x, summoners_rift_detection_icon.y)
             time.sleep(1)
 
-        blind_pick_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/blind_pick.png', confidence=0.999)
+        blind_pick_detection_icon = pyautogui.locateCenterOnScreen('blind_pick.png', confidence=0.999)
         blind_pick_detection_icon_found = blind_pick_detection_icon is not None
         if blind_pick_detection_icon_found:
             pyautogui.click(blind_pick_detection_icon.x, blind_pick_detection_icon.y)
             time.sleep(1)
 
-        confirm_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/confirm.png', confidence=0.999)
+        confirm_detection_icon = pyautogui.locateCenterOnScreen('confirm.png', confidence=0.999)
         confirm_detection_icon_found = confirm_detection_icon is not None
         if confirm_detection_icon_found:
             pyautogui.click(confirm_detection_icon.x, confirm_detection_icon.y)
             time.sleep(2)
 
-        find_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/find.png', confidence=0.8)
+        find_detection_icon = pyautogui.locateCenterOnScreen('find.png', confidence=0.8)
         find_detection_icon_found = find_detection_icon is not None
         if not find_detection_icon_found:
             return False
@@ -154,7 +167,7 @@ class LeagueOfLegendsClientWindow(object):
             return False
 
         # TODO LANGUAGE SPECIFIC
-        accept_game_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/accept.png', confidence=0.9)
+        accept_game_detection_icon = pyautogui.locateCenterOnScreen('accept.png', confidence=0.9)
         pyautogui.click(accept_game_detection_icon.x, accept_game_detection_icon.y)
         return True
 
@@ -174,7 +187,7 @@ class LeagueOfLegendsClientWindow(object):
             return False
 
         # TODO LANGUAGE SPECIFIC
-        search_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/search_champion.png', confidence=0.9)
+        search_detection_icon = pyautogui.locateCenterOnScreen('search_champion.png', confidence=0.9)
         search_detection_icon_found = search_detection_icon is not None
         return search_detection_icon_found
 
@@ -182,7 +195,7 @@ class LeagueOfLegendsClientWindow(object):
         if not self.in_champion_selection():
             return False
 
-        search_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/search_champion.png', confidence=0.9)
+        search_detection_icon = pyautogui.locateCenterOnScreen('search_champion.png', confidence=0.9)
         pyautogui.click(search_detection_icon.x, search_detection_icon.y)
         pyautogui.write(champion_name, interval=0.05)
         return True
@@ -195,7 +208,7 @@ class LeagueOfLegendsClientWindow(object):
         mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
         mouse_event(MOUSEEVENTF_LEFTUP, x, y, 0, 0)
 
-        lock_in_detection_icon = pyautogui.locateCenterOnScreen('AutoLoLClient/lock_champion.png', confidence=0.9)
+        lock_in_detection_icon = pyautogui.locateCenterOnScreen('lock_champion.png', confidence=0.9)
         lock_in_detection_icon_found = lock_in_detection_icon is not None
         if not lock_in_detection_icon_found:
             return False
