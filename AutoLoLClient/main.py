@@ -43,8 +43,7 @@ def search_game():
                 lol_client.pick_first_champion()
             else:
                 accepted = False
-
-        if state != "in_queue":
+        elif state != "in_queue":
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
 
@@ -77,8 +76,7 @@ def wait_for_game():
                 lol_client.pick_first_champion()
             else:
                 accepted = False
-
-        if state != "in_queue":
+        elif state != "in_queue":
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
 
