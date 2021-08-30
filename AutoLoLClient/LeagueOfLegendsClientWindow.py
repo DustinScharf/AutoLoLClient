@@ -97,6 +97,17 @@ class LeagueOfLegendsClientWindow(object):
 
         self.force_foreground()
 
+        party_detection_icon = pyautogui.locateCenterOnScreen('party.png', confidence=0.8)
+        party_detection_icon_found = party_detection_icon is not None
+        if party_detection_icon_found:
+            pyautogui.click(party_detection_icon.x, party_detection_icon.y)
+            time.sleep(2)
+
+            leave_lobby_detection_icon = pyautogui.locateCenterOnScreen('leave_lobby.png', confidence=0.9)
+            pyautogui.click(leave_lobby_detection_icon.x, leave_lobby_detection_icon.y)
+            time.sleep(2)
+            return True
+
         menu_detection_icon_0 = pyautogui.locateCenterOnScreen('home_button.png', confidence=0.8)
         menu_detection_icon_0_found = menu_detection_icon_0 is not None
         if menu_detection_icon_0_found:
@@ -110,19 +121,21 @@ class LeagueOfLegendsClientWindow(object):
             pyautogui.click(menu_detection_icon_1.x, menu_detection_icon_1.y)
             time.sleep(2)
 
-        leave_party_detection_icon_1 = pyautogui.locateCenterOnScreen('leave_party.png', confidence=0.9)
-        leave_party_detection_icon_1_found = leave_party_detection_icon_1 is not None
-        if leave_party_detection_icon_1_found:
-            pyautogui.click(leave_party_detection_icon_1.x, leave_party_detection_icon_1.y)
-            time.sleep(2)
+            leave_party_detection_icon_1 = pyautogui.locateCenterOnScreen('leave_party.png', confidence=0.9)
+            leave_party_detection_icon_1_found = leave_party_detection_icon_1 is not None
+            if leave_party_detection_icon_1_found:
+                pyautogui.click(leave_party_detection_icon_1.x, leave_party_detection_icon_1.y)
+                time.sleep(2)
 
-        leave_party_detection_icon_2 = pyautogui.locateCenterOnScreen('leave_party_2.png', confidence=0.9)
-        leave_party_detection_icon_2_found = leave_party_detection_icon_2 is not None
-        if leave_party_detection_icon_2_found:
-            pyautogui.click(leave_party_detection_icon_2.x, leave_party_detection_icon_2.y)
-            time.sleep(2)
+            leave_party_detection_icon_2 = pyautogui.locateCenterOnScreen('leave_party_2.png', confidence=0.9)
+            leave_party_detection_icon_2_found = leave_party_detection_icon_2 is not None
+            if leave_party_detection_icon_2_found:
+                pyautogui.click(leave_party_detection_icon_2.x, leave_party_detection_icon_2.y)
+                time.sleep(2)
 
-        return True
+            return True
+
+        return False
 
     def search_game(self) -> bool:
         if not self.is_open():
