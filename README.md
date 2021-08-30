@@ -2,7 +2,7 @@
 A tool to automate things in the LoL Client  
 
 ### Installation
-Download and run **AutoLoLClient.exe**
+Download and run **AutoLoLClient.exe**  
 https://github.com/DustinScharf/AutoLoLClient/releases/download/v0.9.9/AutoLoLClient.exe
 
 ### GUI and functions
