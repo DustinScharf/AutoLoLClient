@@ -5,7 +5,7 @@ import pyautogui
 from win32api import MAKELONG, SetCursorPos, mouse_event
 from win32con import WM_LBUTTONDOWN, MK_LBUTTON, MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
 
-from win32gui import FindWindow, GetWindowRect, PostMessage
+from win32gui import FindWindow, GetWindowRect, PostMessage, SetForegroundWindow
 
 
 class LeagueOfLegendsClientWindow(object):
@@ -92,6 +92,8 @@ class LeagueOfLegendsClientWindow(object):
 
         if self.in_menu():
             return True
+
+        self.force_foreground()
 
         menu_detection_icon_0 = pyautogui.locateCenterOnScreen('home_button.png', confidence=0.8)
         menu_detection_icon_0_found = menu_detection_icon_0 is not None
@@ -223,3 +225,6 @@ class LeagueOfLegendsClientWindow(object):
             return "in_menu"
         else:
             return "in any game menu"  # TODO make more clear
+
+    def force_foreground(self):
+        SetForegroundWindow(self.league_of_legends_window)
