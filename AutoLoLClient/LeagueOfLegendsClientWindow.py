@@ -111,16 +111,14 @@ class LeagueOfLegendsClientWindow(object):
         if leave_party_detection_icon_1_found:
             pyautogui.click(leave_party_detection_icon_1.x, leave_party_detection_icon_1.y)
             time.sleep(2)
-            return True
 
         leave_party_detection_icon_2 = pyautogui.locateCenterOnScreen('leave_party_2.png', confidence=0.9)
         leave_party_detection_icon_2_found = leave_party_detection_icon_2 is not None
         if leave_party_detection_icon_2_found:
             pyautogui.click(leave_party_detection_icon_2.x, leave_party_detection_icon_2.y)
             time.sleep(2)
-            return True
 
-        return False
+        return True
 
     def search_game(self) -> bool:
         if not self.is_open():
