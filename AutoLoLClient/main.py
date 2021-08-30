@@ -1,11 +1,16 @@
 import time
 
+import pyautogui
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QLabel, QHBoxLayout
 
 from LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
 
 
 def search_game():
+    user_input = pyautogui.confirm(text='Start searching for game?', title='AutoLoLClient', buttons=["OK", "Cancel"])
+    if user_input == "Cancel":
+        return
+
     if not lol_client.in_menu():
         if not lol_client.go_to_menu():
             msg = QMessageBox()
@@ -58,6 +63,10 @@ def search_game():
 
 
 def wait_for_game():
+    user_input = pyautogui.confirm(text='Start waiting for game?', title='AutoLoLClient', buttons=["OK", "Cancel"])
+    if user_input == "Cancel":
+        return
+
     text_to_send = chat_message_box.text()
     accepted = False
     while not accepted:
@@ -76,18 +85,6 @@ def wait_for_game():
                 lol_client.pick_first_champion()
             else:
                 accepted = False
-        elif state != "in_queue":
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Critical)
-
-            msg.setWindowTitle("AutoLoLClient")
-            msg.setText("Not in queue anymore, please press a start button again")
-
-            msg.setStandardButtons(QMessageBox.Ok)
-
-            msg.exec()
-
-            return
 
 
 if __name__ == '__main__':
@@ -117,7 +114,7 @@ if __name__ == '__main__':
 
     wait_for_game_button = QPushButton("Only wait for accept")
     inner_layout.addWidget(wait_for_game_button)
-    search_game_button.clicked.connect(wait_for_game)
+    wait_for_game_button.clicked.connect(wait_for_game)
 
     layout.addLayout(inner_layout)
 
