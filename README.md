@@ -2,7 +2,8 @@
 A tool to automate things in the LoL Client  
 
 ### Installation
-Download the repository and run ``AutoLoLClient/main.py``  
+Download and run **AutoLoLClient.exe**
+https://github.com/DustinScharf/AutoLoLClient/releases/download/v0.9.9/AutoLoLClient.exe
 
 ### GUI and functions
 ![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The GUI")
