@@ -44,9 +44,11 @@ def search_game():
                 time.sleep(0.03)
 
             if lol_client.in_champion_selection():
-                lol_client.search_champion(champion_pick_box.text())
-                time.sleep(1)
-                lol_client.pick_first_champion()
+                champion_to_pick = champion_pick_box.text()
+                if champion_to_pick != "":
+                    lol_client.search_champion(champion_to_pick)
+                    time.sleep(1)
+                    lol_client.pick_first_champion()
             else:
                 accepted = False
         elif state != "in_queue":
@@ -81,9 +83,11 @@ def wait_for_game():
                 time.sleep(0.03)
 
             if lol_client.in_champion_selection():
-                lol_client.search_champion(champion_pick_box.text())
-                time.sleep(1)
-                lol_client.pick_first_champion()
+                champion_to_pick = champion_pick_box.text()
+                if champion_to_pick != "":
+                    lol_client.search_champion(champion_to_pick)
+                    time.sleep(1)
+                    lol_client.pick_first_champion()
             else:
                 accepted = False
 
@@ -103,7 +107,7 @@ if __name__ == '__main__':
     chat_message_box = QLineEdit()
     layout.addWidget(chat_message_box)
 
-    layout.addWidget(QLabel("Enter champion to pick (full name)"))
+    layout.addWidget(QLabel("Enter champion to pick (full name) [leave blank for no pick]"))
     champion_pick_box = QLineEdit()
     layout.addWidget(champion_pick_box)
 
