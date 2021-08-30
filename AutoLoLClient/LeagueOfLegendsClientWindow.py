@@ -2,10 +2,12 @@ import time
 from typing import Tuple
 
 import pyautogui
+import win32con
 from win32api import MAKELONG, SetCursorPos, mouse_event, GetMonitorInfo, EnumDisplayMonitors
 from win32con import WM_LBUTTONDOWN, MK_LBUTTON, MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
 
-from win32gui import FindWindow, GetWindowRect, PostMessage, SetForegroundWindow, MoveWindow, ShowWindow
+from win32gui import FindWindow, GetWindowRect, PostMessage, SetForegroundWindow, MoveWindow, ShowWindow, \
+    GetWindowPlacement, SetActiveWindow
 
 
 class LeagueOfLegendsClientWindow(object):
@@ -92,6 +94,8 @@ class LeagueOfLegendsClientWindow(object):
 
         if self.in_menu():
             return True
+
+        self.force_foreground()
 
         menu_detection_icon_0 = pyautogui.locateCenterOnScreen('home_button.png', confidence=0.8)
         menu_detection_icon_0_found = menu_detection_icon_0 is not None
@@ -225,6 +229,9 @@ class LeagueOfLegendsClientWindow(object):
             return "in any game menu"  # TODO make more clear
 
     def force_foreground(self):
+        if not self.is_open():
+            return False
+
         main_monitor = None
         for monitor_full_info in EnumDisplayMonitors():
             monitor_py_handle = str(monitor_full_info[0])[:-1].partition("PyHANDLE:")[2]
@@ -239,6 +246,11 @@ class LeagueOfLegendsClientWindow(object):
         main_monitor_x = main_monitor[2][0]
         main_monitor_y = main_monitor[2][1]
 
-        ShowWindow(self.league_of_legends_window, 9)
+        ShowWindow(self.league_of_legends_window, win32con.SW_SHOW)
+        time.sleep(0.25)
         SetForegroundWindow(self.league_of_legends_window)
+        time.sleep(0.25)
+        SetActiveWindow(self.league_of_legends_window)
+        time.sleep(0.25)
         MoveWindow(self.league_of_legends_window, main_monitor_x, main_monitor_y, 1024, 576, True)
+        time.sleep(0.5)

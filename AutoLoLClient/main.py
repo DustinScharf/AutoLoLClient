@@ -64,8 +64,6 @@ def search_game():
 
 
 def wait_for_game():
-    lol_client.force_foreground()
-
     user_input = pyautogui.confirm(text='Start waiting for game?', title='AutoLoLClient', buttons=["OK", "Cancel"])
     if user_input == "Cancel":
         return
