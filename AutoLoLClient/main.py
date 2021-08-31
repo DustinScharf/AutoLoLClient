@@ -20,7 +20,8 @@ def search_game():
 
             msg.setWindowTitle("AutoLoLClient")
             msg.setText("Error occurred, press show details to show possible solutions")
-            msg.setDetailedText("Set the lol client language to english\n"
+            msg.setDetailedText("Start the lol client and login\n"
+                                "Set the lol client language to english\n"
                                 "Set the lol client window size to 1024x576\n"
                                 "Make sure the client window is in foreground of your main monitor")
 
@@ -93,6 +94,12 @@ def wait_for_game():
 
 
 if __name__ == '__main__':
+    pyautogui.alert(text='Welcome to AutoLoLClient!\n'
+                         '\n'
+                         'Hints:\n'
+                         '# Make sure lol language is english\n'
+                         '# And lol client window size is 1024x576', title='AutoLoLClient', button='OK')
+
     lol_client = LeagueOfLegendsClientWindow()
 
     app = QApplication([])
