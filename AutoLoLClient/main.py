@@ -103,13 +103,15 @@ if __name__ == '__main__':
 
     layout = QVBoxLayout()
 
-    layout.addWidget(QLabel("Enter message to write instantly"))
+    layout.addWidget(QLabel("<b>Enter message to write instantly</b><br>[leave blank for no message]"))
     chat_message_box = QLineEdit()
     layout.addWidget(chat_message_box)
 
-    layout.addWidget(QLabel("Enter champion to pick (full name) [leave blank for no pick]"))
+    layout.addWidget(QLabel("<b>Enter champion to pick</b> (full name)<br>[leave blank for no pick]"))
     champion_pick_box = QLineEdit()
     layout.addWidget(champion_pick_box)
+
+    layout.addWidget(QLabel("<hr>"))
 
     inner_layout = QHBoxLayout()
 
