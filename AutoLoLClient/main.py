@@ -105,10 +105,12 @@ if __name__ == '__main__':
 
     layout.addWidget(QLabel("<b>Enter message to write instantly</b><br>[leave blank for no message]"))
     chat_message_box = QLineEdit()
+    chat_message_box.setPlaceholderText("mid")
     layout.addWidget(chat_message_box)
 
     layout.addWidget(QLabel("<b>Enter champion to pick</b> (full name)<br>[leave blank for no pick]"))
     champion_pick_box = QLineEdit()
+    champion_pick_box.setPlaceholderText("Anni")
     layout.addWidget(champion_pick_box)
 
     layout.addWidget(QLabel("<hr>"))
