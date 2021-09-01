@@ -2,6 +2,7 @@ import threading
 import time
 
 import pyautogui
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QLabel, QHBoxLayout
 
 from LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
@@ -56,6 +57,7 @@ def wait_thread(check_queue: bool):
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
 
+            msg.setWindowIcon(QtGui.QIcon("icon.ico"))
             msg.setWindowTitle("AutoLoLClient")
             msg.setText("Not in queue anymore, please press a start button again")
 
@@ -103,6 +105,7 @@ def search_game():
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
 
+            msg.setWindowIcon(QtGui.QIcon("icon.ico"))
             msg.setWindowTitle("AutoLoLClient")
             msg.setText("Error occurred, press show details to show possible solutions")
             msg.setDetailedText("Start the lol client and login\n"
@@ -141,6 +144,7 @@ if __name__ == '__main__':
 
     app = QApplication([])
     window = QWidget()
+    window.setWindowIcon(QtGui.QIcon("icon.ico"))
     window.setWindowTitle("AutoLoLClient")
     window.setMinimumWidth(400)
     window.setMinimumWidth(300)
