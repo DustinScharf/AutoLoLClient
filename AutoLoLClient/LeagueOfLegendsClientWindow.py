@@ -92,6 +92,9 @@ class LeagueOfLegendsClientWindow(object):
         if not self.is_open():
             return False
 
+        if not self.get_size() == [1024, 576]:
+            return False
+
         if self.in_menu():
             return True
 
