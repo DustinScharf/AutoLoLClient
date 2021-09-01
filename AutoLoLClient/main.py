@@ -108,7 +108,7 @@ def search_game():
             msg.setDetailedText("Start the lol client and login\n"
                                 "Set the lol client language to english\n"
                                 "Set the lol client window size to 1024x576\n"
-                                "Make sure the client window is in foreground of your main monitor")
+                                "Place the lol client window in foreground of your main monitor")
 
             msg.setStandardButtons(QMessageBox.Ok)
 
