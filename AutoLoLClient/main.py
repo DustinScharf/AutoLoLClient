@@ -27,6 +27,9 @@ def wait_thread(check_queue: bool):
     search_game_button.setDisabled(True)
     wait_for_game_button.setDisabled(True)
 
+    cancel_search_button.setText("Cancel")
+    cancel_search_button.setDisabled(False)
+
     text_to_send = chat_message_box.text()
     accepted = False
     while not accepted and searching:
@@ -80,6 +83,9 @@ def wait_thread(check_queue: bool):
 
     search_game_button.setDisabled(False)
     wait_for_game_button.setDisabled(False)
+
+    cancel_search_button.setText("Waiting...")
+    cancel_search_button.setDisabled(True)
 
 
 def cancel():
@@ -165,7 +171,8 @@ if __name__ == '__main__':
 
     layout.addLayout(inner_layout)
 
-    cancel_search_button = QPushButton("Cancel")
+    cancel_search_button = QPushButton("Waiting...")  # text will changed in other function
+    cancel_search_button.setDisabled(True)
     layout.addWidget(cancel_search_button)
     cancel_search_button.clicked.connect(cancel)
 
