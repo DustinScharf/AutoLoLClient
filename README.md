@@ -14,3 +14,12 @@ _Get a drink and come back to a starting game!_
 - **Only wait for accept**  
 Will ony wait for accept and then type the message and pick the champion  
 _Useful for multiple player lobby or other game modes_
+
+<hr>
+
+##### Not working?
+Try the following:
+- Start the lol client and login
+- Set the lol client language to english
+- Set the lol client window size to 1024x576
+- Place the lol client window in foreground of your main monitor
