@@ -112,38 +112,8 @@ def search_game():
             return
 
     lol_client.search_game()
-    text_to_send = chat_message_box.text()
-    accepted = False
-    while not accepted:
-        state = lol_client.get_state()
-        if state == "found_game":
-
-            lol_client.accept_game()
-            accepted = True
-            for i in range(30):
-                lol_client.send_message(text_to_send)
-                time.sleep(0.03)
-
-            if lol_client.in_champion_selection():
-                champion_to_pick = champion_pick_box.text()
-                if champion_to_pick != "":
-                    lol_client.search_champion(champion_to_pick)
-                    time.sleep(1)
-                    lol_client.pick_first_champion()
-            else:
-                accepted = False
-        elif state != "in_queue":
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Critical)
-
-            msg.setWindowTitle("AutoLoLClient")
-            msg.setText("Not in queue anymore, please press a start button again")
-
-            msg.setStandardButtons(QMessageBox.Ok)
-
-            msg.exec()
-
-            return
+    search_game_waiting_thread = threading.Thread(target=wait_thread, args=(True,))
+    search_game_waiting_thread.start()
 
 
 def wait_for_game():
@@ -151,26 +121,8 @@ def wait_for_game():
     if user_input == "Cancel":
         return
 
-    text_to_send = chat_message_box.text()
-    accepted = False
-    while not accepted:
-        state = lol_client.get_state()
-        if state == "found_game":
-
-            lol_client.accept_game()
-            accepted = True
-            for i in range(30):
-                lol_client.send_message(text_to_send)
-                time.sleep(0.03)
-
-            if lol_client.in_champion_selection():
-                champion_to_pick = champion_pick_box.text()
-                if champion_to_pick != "":
-                    lol_client.search_champion(champion_to_pick)
-                    time.sleep(1)
-                    lol_client.pick_first_champion()
-            else:
-                accepted = False
+    wait_for_game_waiting_thread = threading.Thread(target=wait_thread, args=(False,))
+    wait_for_game_waiting_thread.start()
 
 
 if __name__ == '__main__':
