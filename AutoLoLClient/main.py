@@ -31,7 +31,6 @@ def wait_thread(check_queue: bool):
     accepted = False
     while not accepted and searching:
         state = lol_client.get_state()
-        print("I wait...")
         if state == "found_game":
 
             lol_client.accept_game()
