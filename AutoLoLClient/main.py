@@ -214,6 +214,10 @@ if __name__ == '__main__':
 
     layout.addLayout(inner_layout)
 
+    cancel_search_button = QPushButton("Cancel")
+    layout.addWidget(cancel_search_button)
+    cancel_search_button.clicked.connect(cancel)
+
     window.setLayout(layout)
     window.show()
     app.exec()
