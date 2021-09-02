@@ -236,6 +236,8 @@ class LeagueOfLegendsClientWindow(object):
 
         pyautogui.click(lock_in_detection_icon.x, lock_in_detection_icon.y)
         time.sleep(0.2)
+        pyautogui.click()
+        time.sleep(0.2)
         return True
 
     def get_state(self) -> str:
