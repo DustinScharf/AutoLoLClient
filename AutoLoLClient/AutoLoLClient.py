@@ -78,6 +78,7 @@ def wait_thread(check_queue: bool):
             searching = False
             return
 
+    # TODO
     # chat_message_box.setReadOnly(False)
     # chat_message_box.setStyleSheet("background-color: white;")
     # champion_pick_box.setReadOnly(False)
