@@ -149,25 +149,25 @@ class LeagueOfLegendsClientWindow(object):
         start_game_detection_icon_found = start_game_detection_icon is not None
         if start_game_detection_icon_found:
             pyautogui.click(start_game_detection_icon.x, start_game_detection_icon.y)
-            time.sleep(1)
+            time.sleep(2)
 
         summoners_rift_detection_icon = pyautogui.locateCenterOnScreen('5v5sumRift.png', confidence=0.999)
         summoners_rift_detection_icon_found = summoners_rift_detection_icon is not None
         if summoners_rift_detection_icon_found:
             pyautogui.click(summoners_rift_detection_icon.x, summoners_rift_detection_icon.y)
-            time.sleep(1)
+            time.sleep(2)
 
         blind_pick_detection_icon = pyautogui.locateCenterOnScreen('blind_pick.png', confidence=0.999)
         blind_pick_detection_icon_found = blind_pick_detection_icon is not None
         if blind_pick_detection_icon_found:
             pyautogui.click(blind_pick_detection_icon.x, blind_pick_detection_icon.y)
-            time.sleep(1)
+            time.sleep(2)
 
         confirm_detection_icon = pyautogui.locateCenterOnScreen('confirm.png', confidence=0.999)
         confirm_detection_icon_found = confirm_detection_icon is not None
         if confirm_detection_icon_found:
             pyautogui.click(confirm_detection_icon.x, confirm_detection_icon.y)
-            time.sleep(2)
+            time.sleep(3)
 
         find_detection_icon = pyautogui.locateCenterOnScreen('find.png', confidence=0.8)
         find_detection_icon_found = find_detection_icon is not None
