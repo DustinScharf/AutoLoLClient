@@ -44,6 +44,7 @@ def wait_thread(check_queue: bool):
                 lol_client.send_message(text_to_send)
                 time.sleep(0.03)
 
+            # TODO check here for errors
             if lol_client.in_champion_selection():
                 champion_to_pick = champion_pick_box.text()
                 if champion_to_pick != "":
