@@ -84,9 +84,9 @@ def wait_thread(check_queue: bool):
     champion_pick_box.setReadOnly(False)
     champion_pick_box.setStyleSheet("background-color: white;")
 
-    # search_game_button.setDisabled(False)
-    # wait_for_game_button.setDisabled(False)
-    #
+    search_game_button.setDisabled(False)
+    wait_for_game_button.setDisabled(False)
+
     # cancel_search_button.setText("Waiting...")
     # cancel_search_button.setDisabled(True)
 
