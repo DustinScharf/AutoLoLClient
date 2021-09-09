@@ -78,7 +78,6 @@ def wait_thread(check_queue: bool):
             searching = False
             return
 
-    # TODO error in this commented out area
     chat_message_box.setReadOnly(False)
     chat_message_box.setStyleSheet("background-color: white;")
     champion_pick_box.setReadOnly(False)
@@ -88,7 +87,7 @@ def wait_thread(check_queue: bool):
     wait_for_game_button.setDisabled(False)
 
     cancel_search_button.setText("Waiting...")
-    # cancel_search_button.setDisabled(True)
+    cancel_search_button.setDisabled(True)  # TODO test this line
 
 
 def cancel():
