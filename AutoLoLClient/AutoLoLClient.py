@@ -79,11 +79,11 @@ def wait_thread(check_queue: bool):
             return
 
     # TODO error in this commented out area
-    # chat_message_box.setReadOnly(False)
-    # chat_message_box.setStyleSheet("background-color: white;")
-    # champion_pick_box.setReadOnly(False)
-    # champion_pick_box.setStyleSheet("background-color: white;")
-    #
+    chat_message_box.setReadOnly(False)
+    chat_message_box.setStyleSheet("background-color: white;")
+    champion_pick_box.setReadOnly(False)
+    champion_pick_box.setStyleSheet("background-color: white;")
+
     # search_game_button.setDisabled(False)
     # wait_for_game_button.setDisabled(False)
     #
