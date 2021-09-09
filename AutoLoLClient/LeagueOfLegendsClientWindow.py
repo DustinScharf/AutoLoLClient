@@ -98,6 +98,7 @@ class LeagueOfLegendsClientWindow(object):
         if self.in_menu():
             return True
 
+        # TODO experimental, can cause bugs
         self.force_foreground()
 
         party_detection_icon = pyautogui.locateCenterOnScreen('party.png', confidence=0.8)
