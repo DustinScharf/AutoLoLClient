@@ -40,7 +40,7 @@ def wait_thread(check_queue: bool):
             lol_client.accept_game()
             accepted = True
             searching = False
-            for i in range(30):
+            for i in range(32):
                 lol_client.send_message(text_to_send)
                 time.sleep(0.03)
 
