@@ -158,7 +158,7 @@ class LeagueOfLegendsClientWindow(object):
             pyautogui.click(summoners_rift_detection_icon.x, summoners_rift_detection_icon.y)
             time.sleep(2)
 
-        blind_pick_detection_icon = pyautogui.locateCenterOnScreen('blind_pick.png', confidence=0.999)
+        blind_pick_detection_icon = pyautogui.locateCenterOnScreen('blind_pick.png', confidence=0.9)
         blind_pick_detection_icon_found = blind_pick_detection_icon is not None
         if blind_pick_detection_icon_found:
             pyautogui.click(blind_pick_detection_icon.x, blind_pick_detection_icon.y)
