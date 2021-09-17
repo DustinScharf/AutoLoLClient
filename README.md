@@ -9,12 +9,12 @@ A tool to automate things in the LoL Client
 **Download:** https://github.com/DustinScharf/AutoLoLClient/releases/download/v1.0/AutoLoLClient.zip
 
 ### GUI and functions
-![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The GUI")
-- **Search blind pick game** _(Experimental)_  
+![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The GUI")  
+- **Search blind pick game** _(experimental)_  
 Will search a game on its own, type the message and pick the champion  
 _Get a drink and come back to a starting game!_
 
-- **Only wait for accept**  
+- **Only wait for accept** _(experimental)_  
 Will ony wait for accept and then type the message and pick the champion  
 _Useful for multiple player lobby or other game modes_
 
