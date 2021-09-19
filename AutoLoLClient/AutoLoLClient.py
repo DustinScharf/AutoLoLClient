@@ -6,8 +6,6 @@ from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QLabel, QHBoxLayout
 
 from LeagueOfLegendsClientWindow import LeagueOfLegendsClientWindow
-from win32api import GetMonitorInfo, EnumDisplayMonitors
-from win32gui import MoveWindow
 
 searching = False
 
