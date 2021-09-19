@@ -40,9 +40,13 @@ def wait_thread(check_queue: bool):
             lol_client.accept_game()
             accepted = True
             searching = False
+            already_wrote = False
             for i in range(35):  # TODO lower by checking if already wrote in chat on another thread
                 lol_client.send_message(text_to_send)
                 time.sleep(0.03)
+                # TODO update already_wrote in extra thread
+                if already_wrote:
+                    break
 
             # TODO check here for errors (only in wait for game mode? only if text marked?)
             # The error only triggers in some cases, maybe if a game was not accepted by one player and then re-found
