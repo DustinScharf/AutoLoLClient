@@ -47,6 +47,7 @@ def wait_thread(check_queue: bool):
             # TODO check here for errors (only in wait for game mode? only if text marked?)
             # The error only triggers in some cases, maybe if a game was not accepted by one player and then re-found
             # TODO reimplemented reaccept logic
+            # only restart after everything is done should fex
             if lol_client.in_champion_selection():
                 champion_to_pick = champion_pick_box.text()
                 if champion_to_pick != "":
