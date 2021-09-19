@@ -59,6 +59,8 @@ def wait_thread(check_queue: bool):
                     time.sleep(1)
                     lol_client.pick_first_champion()
             else:
+                if lol_client.get_state() == "found_game":
+                    time.sleep(1)
                 accepted = False
                 searching = True
         elif check_queue and state != "in_queue":
