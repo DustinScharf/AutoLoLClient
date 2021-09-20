@@ -186,7 +186,7 @@ class LeagueOfLegendsClientWindow(object):
             return False
 
         # TODO LANGUAGE SPECIFIC
-        accept_game_detection_icon = pyautogui.locateCenterOnScreen('accept.png', confidence=0.9)
+        accept_game_detection_icon = pyautogui.locateCenterOnScreen('accept.png', confidence=0.8)
         pyautogui.click(accept_game_detection_icon.x, accept_game_detection_icon.y)
         return True
 
@@ -206,7 +206,7 @@ class LeagueOfLegendsClientWindow(object):
             return False
 
         # TODO LANGUAGE SPECIFIC
-        search_detection_icon = pyautogui.locateCenterOnScreen('search_champion.png', confidence=0.9)
+        search_detection_icon = pyautogui.locateCenterOnScreen('search_champion.png', confidence=0.85)
         search_detection_icon_found = search_detection_icon is not None
         return search_detection_icon_found
 
