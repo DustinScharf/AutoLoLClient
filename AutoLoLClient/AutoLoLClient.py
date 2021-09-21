@@ -39,7 +39,7 @@ def wait_thread(check_queue: bool):
             accepted = True
             searching = False
             already_wrote = False
-            for i in range(40):  # TODO lower by checking if already wrote in chat on another thread
+            for i in range(42):  # TODO lower by checking if already wrote in chat on another thread
                 lol_client.send_message(text_to_send)
                 time.sleep(0.03)
                 # TODO update already_wrote in extra thread
