@@ -18,7 +18,7 @@ def wait_thread(check_queue: bool):
 
     searching = True
 
-    # TODO hide window while search
+    # TODO hide (minimize) window while search
 
     chat_message_box.setReadOnly(True)
     chat_message_box.setStyleSheet("background-color: lightgray;")
