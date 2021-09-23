@@ -20,6 +20,7 @@ def wait_thread(check_queue: bool):
 
     # TODO hide (minimize) window while search
 
+    # TODO display current search status (only wait or search blind game)
     chat_message_box.setReadOnly(True)
     chat_message_box.setStyleSheet("background-color: lightgray;")
     champion_pick_box.setReadOnly(True)
