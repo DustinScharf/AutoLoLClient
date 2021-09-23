@@ -18,6 +18,8 @@ def wait_thread(check_queue: bool):
 
     searching = True
 
+    # TODO hide window while search
+
     chat_message_box.setReadOnly(True)
     chat_message_box.setStyleSheet("background-color: lightgray;")
     champion_pick_box.setReadOnly(True)
