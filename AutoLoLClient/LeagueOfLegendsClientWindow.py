@@ -265,7 +265,7 @@ class LeagueOfLegendsClientWindow(object):
                 break
 
         if main_monitor is None:
-            return False
+            return False  # should never happen
 
         main_monitor_x = main_monitor[2][0]
         main_monitor_y = main_monitor[2][1]
