@@ -250,7 +250,7 @@ class LeagueOfLegendsClientWindow(object):
         elif self.in_menu():
             return "in_menu"
         else:
-            return "in any game menu"
+            return "other"
 
     def force_foreground(self):
         if not self.is_open():
