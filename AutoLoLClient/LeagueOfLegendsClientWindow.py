@@ -85,7 +85,7 @@ class LeagueOfLegendsClientWindow(object):
             return False
 
         # TODO LANGUAGE SPECIFIC
-        game_found_detection_icon = pyautogui.locateCenterOnScreen('found.png', confidence=0.9)
+        game_found_detection_icon = pyautogui.locateCenterOnScreen('found.png', confidence=0.8)
         game_found = game_found_detection_icon is not None
         return game_found
 
