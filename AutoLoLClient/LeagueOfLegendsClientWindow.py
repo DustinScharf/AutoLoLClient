@@ -84,7 +84,6 @@ class LeagueOfLegendsClientWindow(object):
         if not self.is_open():
             return False
 
-        # TODO use accept button, because of different game modes
         game_found_detection_icon = pyautogui.locateCenterOnScreen('found.png', confidence=0.9)
         game_found = game_found_detection_icon is not None
         return game_found
