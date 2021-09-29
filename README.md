@@ -6,7 +6,9 @@ A tool to automate things in the LoL Client
 2. Extract **AutoLoLClient**.zip
 3. Run **AutoLoLClient**.exe  
 
-**Download:** https://github.com/DustinScharf/AutoLoLClient/releases/download/v1.2/AutoLoLClient.zip
+**Download:** https://github.com/DustinScharf/AutoLoLClient/releases/download/v1.2/AutoLoLClient.zip  
+
+Optionally right click **AutoLoLClient**.exe and choose **Send to >** _Desktop (create shortcut)_  
 
 ### GUI and functions
 ![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The GUI")  
