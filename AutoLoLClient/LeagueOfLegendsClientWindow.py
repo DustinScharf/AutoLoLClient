@@ -3,11 +3,10 @@ from typing import Tuple
 
 import pyautogui
 import win32con
-from win32api import MAKELONG, SetCursorPos, mouse_event, GetMonitorInfo, EnumDisplayMonitors
-from win32con import WM_LBUTTONDOWN, MK_LBUTTON, MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
-
-from win32gui import FindWindow, GetWindowRect, PostMessage, SetForegroundWindow, MoveWindow, ShowWindow, \
-    GetWindowPlacement, SetActiveWindow
+from win32api import SetCursorPos, mouse_event, GetMonitorInfo, EnumDisplayMonitors
+from win32con import MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP
+from win32gui import FindWindow, GetWindowRect, SetForegroundWindow, MoveWindow, ShowWindow, \
+    SetActiveWindow
 
 
 class LeagueOfLegendsClientWindow(object):
