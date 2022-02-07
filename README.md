@@ -23,7 +23,8 @@ _Useful for multiple player lobby or other game modes_
 <hr>
 
 ##### Not working?
-Try the following:
+This project is not up to date.
+You can also try the following:
 - Start the lol client and login
 - Set the lol client language to english
 - Set the lol client window size to 1024x576
