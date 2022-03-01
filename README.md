@@ -11,7 +11,7 @@ A tool to automate things in the LoL Client
 Optionally right click **AutoLoLClient**.exe and choose **Send to >** _Desktop (create shortcut)_  
 
 ### GUI and functions
-![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The GUI")  
+![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The AutoLoLClient GUI")  
 - **Search blind pick game** _(experimental)_  
 Will search a game on its own, type the message and pick the champion  
 _Get a drink and come back to a starting game!_
