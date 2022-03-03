@@ -17,7 +17,7 @@ Will search a game on its own, type the message and pick the champion
 _Get a drink and come back to a starting game!_
 
 - **Only wait for accept** _(experimental)_  
-Will ony wait for accept and then type the message and pick the champion  
+Will ony wait for accept and then types your specified message and picks the champion  
 _Useful for multiple player lobby or other game modes_
 
 <hr>
