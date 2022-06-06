@@ -1,5 +1,5 @@
-# AutoLoLClient
-A tool to automate things in the LoL Client  
+# AutoLoLClient (LoL Instalock)
+GUI to automate things in the LoL Client  
 
 ### Installation
 1. Download [**AutoLoLClient**.zip](https://github.com/DustinScharf/AutoLoLClient/releases/download/v1.2/AutoLoLClient.zip "Click here to download AutoLolClient") from this repo
