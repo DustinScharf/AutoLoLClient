@@ -8,7 +8,7 @@ GUI to automate things very fast in the LoL Client
 
 **Download:** https://github.com/DustinScharf/AutoLoLClient/releases/download/v1.2/AutoLoLClient.zip  
 
-Optionally right click **AutoLoLClient**.exe and choose **Send to >** _Desktop (create shortcut)_  
+Optionally - to get this on your Desktop - right click **AutoLoLClient**.exe and choose **Send to >** _Desktop (create shortcut)_  
 
 ### GUI and functions
 ![This image shows the GUI of AutoLoLClient](AutoLoLClient/window.png "The AutoLoLClient GUI")  
