@@ -2,7 +2,7 @@
 GUI to automate things like Instalock (and Instachat) very fast in the LoL Client  
 
 ### Installation
-1. Download [**AutoLoLClient**.zip](https://github.com/DustinScharf/AutoLoLClient/releases/download/v1.2/AutoLoLClient.zip "Click here to download AutoLolClient") from this repo
+1. Download [**AutoLoLClient**.zip](https://github.com/DustinScharf/AutoLoLClient/releases/download/v1.2/AutoLoLClient.zip "Click here to download AutoLolClient") from this repo (or click on the link)
 2. Extract **AutoLoLClient**.zip (wherever you want)
 3. Run **AutoLoLClient**.exe  
 
